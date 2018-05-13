@@ -1,0 +1,163 @@
+[
+    {
+        "name": "Mulhouse",
+        "lng": 7.335888000000068,
+        "lat": 47.750839,
+        "type": "City",
+        "now": true
+    },
+    {
+        "name": "Lyon",
+        "lng": 4.835658999999964,
+        "lat": 45.764043,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Strasbourg",
+        "lng": 7.752111300000024,
+        "lat": 48.5734053,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Rome",
+        "lng": 12.496365500000024,
+        "lat": 41.9027835,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Nice",
+        "lng": 7.261953199999994,
+        "lat": 43.7101728,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Munich",
+        "lng": 11.581980499999986,
+        "lat": 48.1351253,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Clermont-Ferrand",
+        "lng": 3.0870250000000397,
+        "lat": 45.77722199999999,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "St-Jacus de la mer",
+        "lng": -2.190027999999984,
+        "lat": 48.59734,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Chicago",
+        "lng": -87.62979819999998,
+        "lat": 41.8781136,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Indianapolis",
+        "lng": -86.15806800000001,
+        "lat": 39.768403,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Dublin",
+        "lng": -6.260309699999993,
+        "lat": 53.3498053,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Londre",
+        "lng": -0.12775829999998223,
+        "lat": 51.5073509,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Rapperswil-Jona",
+        "lng": 8.818437399999993,
+        "lat": 47.2266239,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "San Francisco",
+        "lng": -122.41941550000001,
+        "lat": 37.7749295,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Mountain View",
+        "lng": -122.0838511,
+        "lat": 37.3860517,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Prague",
+        "lng": 14.43780049999998,
+        "lat": 50.0755381,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Fribourg",
+        "lng": 7.161971900000026,
+        "lat": 46.8064773,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Genêve",
+        "lng": 6.143157699999961,
+        "lat": 46.2043907,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Bruxelles",
+        "lng": 4.351721099999963,
+        "lat": 50.8503463,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Copenhagen",
+        "lng": 12.568337199999974,
+        "lat": 55.6760968,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Berlin",
+        "lng": 13.404953999999975,
+        "lat": 52.52000659999999,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Paris",
+        "lng": 2.3522219000000177,
+        "lat": 48.856614,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Bale",
+        "lng": 7.588576099999955,
+        "lat": 47.5595986,
+        "type": "City",
+        "now": false
+    }
+]
