@@ -7,6 +7,20 @@
         "now": true
     },
     {
+        "name": "Annecy",
+        "lng": 6.129383999999959,
+        "lat": 45.899247,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Venise",
+        "lng": 12.31551509999997,
+        "lat": 45.4408474,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Barcelone",
         "lng": 2.1734034999999494,
         "lat": 41.3850639,
