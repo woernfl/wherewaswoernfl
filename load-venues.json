@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Barcelone",
+        "lng": 2.1734034999999494,
+        "lat": 41.3850639,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Lyon",
         "lng": 4.835658999999964,
         "lat": 45.764043,
