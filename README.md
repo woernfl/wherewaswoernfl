@@ -7,6 +7,9 @@ Files in this repos:
 - index.html: contain the frontend
 - load-venues.json: contain the list of places I already visited
 
+## How to get lng and lat
+I personally use <https://www.coordonnees-gps.fr/> to get the longitude and latitude, but it is up to you.
+
 ## Rendering
 If you want to see the output of this repo,go to <https://where.woernfl.xyz/>
 
