@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Titisee",
+        "lng": 8.144789700000047,
+        "lat": 47.8946026,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Annecy",
         "lng": 6.129383999999959,
         "lat": 45.899247,
