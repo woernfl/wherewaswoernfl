@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Solothurn",
+        "lng": 7.5322909999999865,
+        "lat": 47.2088348,
+        "type": "City",
+        "now": true
+    },
+    {
         "name": "Titisee",
         "lng": 8.144789700000047,
         "lat": 47.8946026,
