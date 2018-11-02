@@ -4,14 +4,14 @@
         "lng": 7.335888000000068,
         "lat": 47.750839,
         "type": "City",
-        "now": false
+        "now": true
     },
     {
         "name": "Edinburgh",
         "lng": -3.209308999999962,
         "lat": 55.9460638,
         "type": "City",
-        "now": true
+        "now": false
     },
     {
         "name": "Solothurn",
