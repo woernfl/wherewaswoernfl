@@ -4,14 +4,14 @@
         "lng": 7.335888000000068,
         "lat": 47.750839,
         "type": "City",
-        "now": false
+        "now": true
     },
     {
         "name": "Boston",
         "lng": -71.05888010000001,
         "lat": 42.3600825,
         "type": "City",
-        "now": true
+        "now": false
     },
     {
         "name": "Edinburgh",
