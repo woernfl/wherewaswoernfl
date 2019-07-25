@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "New York",
+        "lng": -74.0060152,
+        "lat": 40.7127281,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Boston",
         "lng": -71.05888010000001,
         "lat": 42.3600825,
