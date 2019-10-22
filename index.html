@@ -1,0 +1,166 @@
+<!--
+    This site has been ispired by Bob Van Luijt, that I would like to thanks.
+    See the original code: https://github.com/bobvanluijt/whereWasBob
+
+    Add places in the load-venues.json file.
+    You can use to get the GPS coordonates: https://www.gps-coordinates.org/
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Where was woernfl?</title>
+    <meta name="title" content="Where was woernfl?">
+    <meta name="description" content="Where in the world was I...?">
+    <meta name="theme-color" content="#22f79f">
+    <meta property="og:title" content="See where was I?">
+    <meta property="og:url" content="http://woernfl.xyz">
+    <meta property="og:image" content="loading.png">
+    <meta property="og:description" content="Where in the world was I...?">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@woernfl">
+    <meta name="twitter:site" content="@woernfl">
+    <meta name="twitter:title" content="Where was woernfl?">
+    <meta name="twitter:description" content="Where in the world was I...?">
+    <meta name="twitter:image:src" content="loading.png">
+    <meta property="author" content="Florian Woerner">
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="woernfl.xyz">
+    <meta property="al:web:url" content="http://woernfl.xyz">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="favicon/W_logo.png" class="js-favicon">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+        }
+        a {
+            color: hotpink;
+        }
+        @media screen and (orientation:portrait) {
+            h1, h2, h3 {
+                zoom: 200%;
+            }
+            #overlayTextBlock {
+                top:40% !important;
+            }
+        }
+        h3 {
+            font-family: 'Lora', serif;
+        }
+        #map {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+        .bigB {
+            position: absolute;
+            background-image: url('logo.png');
+            background-size: cover;
+            width: 300px;
+            height: 88px;
+            left: 50%;
+            margin-left: -150px;
+            top: 1rem; /* padding-ish */
+            z-index: 4;
+            cursor: pointer;
+        }
+        #overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #F05C2C;
+            opacity: 0.7;
+            z-index: 2;
+            cursor: crosshair;
+        }
+        #overlayTextBlock {
+            position: absolute;
+            top:50%;
+            height: 220px;
+            margin-top: -110px;
+            z-index: 3;
+            width: 580px;
+            left: 50%;
+            margin-left: -290px;
+        }
+        @media screen and (max-width: 600px) {
+            #overlayTextBlock {
+                width:70%;
+                margin-left: -35%;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            #overlayTextBlock {
+                width:90%;
+                margin-left: -45%;
+            }
+        }
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="map"><!-- Google MAPS --></div>
+    <div id="overlay"><!-- Color overlay --></div>
+    <div id="overlayTextBlock">
+        <!-- some welcome text -->
+        <h1>Hi there!</h1>
+        <h2>My Trips Around the World &#x2708;<br></h2>
+        <small>Also checkout my <a href="https://medium.com/@woernfl" target="_blank">blog</a></small>
+        <h3>Loading travels...</h3>
+    </div>
+    <div class="bigB"><!-- B logo --></div>
+    <script>
+    'use strict';
+
+    /**
+     * Get the URL parameter
+     */
+    var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+
+    /**
+     * Handle to website
+     */ 
+    $(".bigB").click(function(){
+        var win = window.open("https://medium.com/@woernfl", "_blank");
+        win.focus();
+    });
+
+    /**
+     * Remove the window
+     */
+    if(getUrlParameter("nowindow") == "1"){
+        $("#overlay,#overlayTextBlock").toggle();
+    }
+
+    /**
+     * Init the Map
+     */
+    var mymap = L.map('map').setView([51.505, -0.09], 13);
+    </script>
+  </body>
+</html>
