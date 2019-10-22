@@ -85,7 +85,9 @@
 	      // start the map in South-East England
 	      map.setView(new L.LatLng(51.3, 0.7),9);
 	      map.addLayer(osm);
-	      L.marker([51.3, 0.7]).addTo(map);
+				var latlng = L.latLng(51.3, 0.7);
+	      var layer = L.marker(latlng).addTo(map);
+				layer.addTo(map);
       }
       
       initmap();
