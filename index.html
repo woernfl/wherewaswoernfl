@@ -38,129 +38,33 @@
     <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    
     <style>
-        body {
-            font-family: 'Lato', sans-serif;
-            margin: 0;
-        }
-        a {
-            color: hotpink;
-        }
-        @media screen and (orientation:portrait) {
-            h1, h2, h3 {
-                zoom: 200%;
-            }
-            #overlayTextBlock {
-                top:40% !important;
-            }
-        }
-        h3 {
-            font-family: 'Lora', serif;
-        }
-        #map {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            z-index: 1;
-        }
-        .bigB {
-            position: absolute;
-            background-image: url('logo.png');
-            background-size: cover;
-            width: 300px;
-            height: 88px;
-            left: 50%;
-            margin-left: -150px;
-            top: 1rem; /* padding-ish */
-            z-index: 4;
-            cursor: pointer;
-        }
-        #overlay {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: #F05C2C;
-            opacity: 0.7;
-            z-index: 2;
-            cursor: crosshair;
-        }
-        #overlayTextBlock {
-            position: absolute;
-            top:50%;
-            height: 220px;
-            margin-top: -110px;
-            z-index: 3;
-            width: 580px;
-            left: 50%;
-            margin-left: -290px;
-        }
-        @media screen and (max-width: 600px) {
-            #overlayTextBlock {
-                width:70%;
-                margin-left: -35%;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            #overlayTextBlock {
-                width:90%;
-                margin-left: -45%;
-            }
-        }
-        
+      body {
+        font-family: 'Lato', sans-serif;
+        margin: 0;
+      }
+      a {
+        color: hotpink;
+      }
+      h3 {
+        font-family: 'Lora', serif;
+      }
+      #map {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+      }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   </head>
   <body>
     <div id="map"><!-- Google MAPS --></div>
-    <div id="overlay"><!-- Color overlay --></div>
-    <div id="overlayTextBlock">
-        <!-- some welcome text -->
-        <h1>Hi there!</h1>
-        <h2>My Trips Around the World &#x2708;<br></h2>
-        <small>Also checkout my <a href="https://medium.com/@woernfl" target="_blank">blog</a></small>
-        <h3>Loading travels...</h3>
-    </div>
-    <div class="bigB"><!-- B logo --></div>
     <script>
-    'use strict';
-
-    /**
-     * Get the URL parameter
-     */
-    var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
-
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined ? true : sParameterName[1];
-            }
-        }
-    };
-
-    /**
-     * Handle to website
-     */ 
-    $(".bigB").click(function(){
-        var win = window.open("https://medium.com/@woernfl", "_blank");
-        win.focus();
-    });
-
-    /**
-     * Remove the window
-     */
-    if(getUrlParameter("nowindow") == "1"){
-        $("#overlay,#overlayTextBlock").toggle();
-    }
-
-    /**
-     * Init the Map
-     */
-    var mymap = L.map('map').setView([51.505, -0.09], 13);
+      var mymap = L.map('map').setView([51.505, -0.09], 13);
     </script>
   </body>
 </html>
