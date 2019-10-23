@@ -88,7 +88,7 @@
 		      shadowSize: [41, 41]
 	      });
 	      
-	      var orangeIcon = new L.Icon({
+	      var redIcon = new L.Icon({
 		      iconUrl: 'img/marker-icon-2x-orange.png',
 		      shadowUrl: 'img/marker-shadow.png',
 		      iconSize: [25, 41],
@@ -103,10 +103,10 @@
                     if(val.now === true){
 		        map.setView(new L.LatLng(val.lat, val.lng),9);
 	                map.addLayer(osm);
-			var layer = L.marker(L.latLng(val.lat, val.lng), {title: val.name, icon: greenIcon}).addTo(map);
+			var layer = L.marker(L.latLng(val.lat, val.lng), {title: val.name, icon: redIcon}).addTo(map);
 	                layer.addTo(map);
                     } else {
-                      var layer = L.marker(L.latLng(val.lat, val.lng), {title: val.name, icon: orangeIcon}).addTo(map);
+                      var layer = L.marker(L.latLng(val.lat, val.lng), {title: val.name, icon: greenIcon}).addTo(map);
 	              layer.addTo(map);
                     }
 		});
