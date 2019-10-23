@@ -38,218 +38,83 @@
     <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-            margin: 0;
-        }
-        a {
-            color: hotpink;
-        }
-        @media screen and (orientation:portrait) {
-            h1, h2, h3 {
-                zoom: 200%;
-            }
-            #overlayTextBlock {
-                top:40% !important;
-            }
-        }
-        h3 {
-            font-family: 'Lora', serif;
-        }
-        #map {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            z-index: 1;
-        }
-        .bigB {
-            position: absolute;
-            background-image: url('logo.png');
-            background-size: cover;
-            width: 300px;
-            height: 88px;
-            left: 50%;
-            margin-left: -150px;
-            top: 1rem; /* padding-ish */
-            z-index: 4;
-            cursor: pointer;
-        }
-        #overlay {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: #F05C2C;
-            opacity: 0.7;
-            z-index: 2;
-            cursor: crosshair;
-        }
-        #overlayTextBlock {
-            position: absolute;
-            top:50%;
-            height: 220px;
-            margin-top: -110px;
-            z-index: 3;
-            width: 580px;
-            left: 50%;
-            margin-left: -290px;
-        }
-        @media screen and (max-width: 600px) {
-            #overlayTextBlock {
-                width:70%;
-                margin-left: -35%;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            #overlayTextBlock {
-                width:90%;
-                margin-left: -45%;
-            }
-        }
-        
-    </style>
+		
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- MAP -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+        margin: 0;
+      }
+      a {
+        color: hotpink;
+      }
+      h3 {
+        font-family: 'Lora', serif;
+      }
+      #map {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+      }
+    </style>
   </head>
+	
   <body>
-    <div id="map"><!-- Google MAPS --></div>
-    <div id="overlay"><!-- Color overlay --></div>
-    <div id="overlayTextBlock">
-        <!-- some welcome text -->
-        <h1>Hi there!</h1>
-        <h2>My Trips Around the World &#x2708;<br></h2>
-        <small>Also checkout my <a href="https://medium.com/@woernfl" target="_blank">blog</a></small>
-        <h3>Loading travels...</h3>
-    </div>
-    <div class="bigB"><!-- B logo --></div>
+    <div id="map"><!-- MAP --></div>
     <script>
-    'use strict';
+      var map;
+			
+      function initmap() {
+	      // set up the map
+	      map = new L.Map('map');
 
-    /**
-     * Get the URL parameter
-     */
-    var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
-
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined ? true : sParameterName[1];
-            }
-        }
-    };
-
-    /**
-     * Handle to website
-     */ 
-    $(".bigB").click(function(){
-        var win = window.open("https://medium.com/@woernfl", "_blank");
-        win.focus();
-    });
-
-    /**
-     * Remove the window
-     */
-    if(getUrlParameter("nowindow") == "1"){
-        $("#overlay,#overlayTextBlock").toggle();
-    }
-
-    /**
-     * Init the Map
-     */
-    function initMap() {
-
-        /**
-         * Load the actual maps
-         */
-        function loadMaps(){
-            var addIcon = {
-                anchor: new google.maps.Point(10,10),
-                strokeWeight: 0.2,
-                fillOpacity: 1,
-                optimized: false
-            };
-            $.ajaxSetup({ cache: false });
-            $.getJSON("load-venues.json", function( data ) {            
+	      // create the tile layer with correct attribution
+	      var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	      var osmAttrib='Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
+	      var osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 20, attribution: osmAttrib});	
+	      
+	      var greenIcon = new L.Icon({
+		      iconUrl: 'img/marker-icon-2x-green.png',
+		      shadowUrl: 'img/marker-shadow.png',
+		      iconSize: [25, 41],
+		      iconAnchor: [12, 41],
+		      popupAnchor: [1, -34],
+		      shadowSize: [41, 41]
+	      });
+	      
+	      var redIcon = new L.Icon({
+		      iconUrl: 'img/marker-icon-2x-orange.png',
+		      shadowUrl: 'img/marker-shadow.png',
+		      iconSize: [25, 41],
+		      iconAnchor: [12, 41],
+		      popupAnchor: [1, -34],
+		      shadowSize: [41, 41]
+	      });
+	      
+	      $.getJSON("load-venues.json", function( data ) {            
                 data.forEach(function(val) {
-                    //console.log("Create: " + val.type);
+                    console.log("Create: " + val.type);
                     if(val.now === true){
-                        addIcon.path = "M8,0C4.687,0,2,2.687,2,6c0,3.854,4.321,8.663,5,9.398C7.281,15.703,7.516,16,8,16s0.719-0.297,1-0.602  C9.679,14.663,14,9.854,14,6C14,2.687,11.313,0,8,0z M8,10c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S10.209,10,8,10z M8,4  C6.896,4,6,4.896,6,6s0.896,2,2,2s2-0.896,2-2S9.104,4,8,4z";
-                        addIcon.fillColor = '#1ce742';
-                        addIcon.scale = 3;
-                        addIcon.zIndex = 800;
-                        map.setCenter({lat: val.lat, lng: val.lng});
-                    } else if(val.type.indexOf("Train") !== -1){
-                        addIcon.path = "M319.228,116.471c-2.277-0.59-6.785-1.715-6.785-1.715l-0.012-50.163c0-10.677-8.771-20.485-24.299-24.461c-14.918-3.819-26.834-7.109-49.414-8.599c3.793-3.295,6.203-8.142,6.203-13.562C244.921,8.047,236.874,0,226.947,0c-9.924,0-17.971,8.046-17.971,17.971c0,4.952,2.004,9.433,5.242,12.684h-18.314c3.238-3.251,5.242-7.732,5.242-12.684C201.146,8.047,193.102,0,183.175,0c-9.926,0-17.971,8.046-17.971,17.971c0,5.419,2.408,10.267,6.203,13.562c-22.582,1.49-34.496,4.78-49.414,8.599c-15.527,3.976-24.299,13.784-24.299,24.461l-0.014,50.163c0,0-4.508,1.125-6.783,1.715c-5.418,1.405-9.199,6.293-9.199,11.889v151.906c0,6.783,5.498,12.281,12.281,12.281h222.162c6.783,0,12.281-5.499,12.281-12.281V128.359C328.425,122.764,324.644,117.875,319.228,116.471z M125.955,68.351c20.594-5.1,41.52-8.215,62.33-9.282v39.196c-20.803,1.036-41.721,4.061-62.33,9.012V68.351z M205.472,177.957h-0.818c-14.5,0-26.297-11.797-26.297-26.3c0-14.501,11.797-26.299,26.297-26.299h0.818c14.502,0,26.299,11.798,26.299,26.299C231.771,166.16,219.974,177.957,205.472,177.957z M284.171,107.277c-20.607-4.952-41.527-7.976-62.33-9.012V59.069c20.811,1.067,41.735,4.182,62.33,9.282V107.277L284.171,107.277z";
-                        addIcon.fillColor = '#aec6cf';
-                        addIcon.scale = 0.10;
-                        addIcon.zIndex = 2;
-                    } else if(val.type.indexOf("Airport") !== -1){
-                        addIcon.path = "M48.049 36.31c.523.169.951-.142.951-.692v-3.494c0-.55-.387-1.23-.859-1.512l-18.282-10.895c-.472-.281-.859-.962-.859-1.511v-12.206c0-.55-.168-1.417-.374-1.928 0 0-1.091-2.708-3-3.01-.204-.036-.411-.062-.619-.062h-.01c-.241-.002-.479.028-.713.072l-.216.048-.328.102c-1.588.53-2.406 2.835-2.406 2.835-.184.519-.334 1.393-.334 1.943v12.206c0 .55-.387 1.23-.859 1.512l-18.282 10.894c-.472.282-.859.962-.859 1.512v3.494c0 .55.428.861.951.691l18.098-5.875c.523-.169.951.142.951.692v9.533c0 .55-.36 1.271-.8 1.601l-2.4 1.802c-.44.33-.8 1.051-.8 1.601v2.337c0 .55.433.876.961.724l6.075-1.745c.528-.152 1.394-.152 1.922 0l6.081 1.745c.528.152.961-.174.961-.724v-2.338c0-.55-.36-1.271-.8-1.601l-2.4-1.802c-.439-.33-.8-1.051-.8-1.601v-9.533c0-.55.428-.861.951-.691l18.098 5.876z";
-                        addIcon.fillColor = '#ffbf35';
-                        addIcon.scale = 0.85;
-                        addIcon.zIndex = 8;
-                    } else if(val.type.indexOf("City") !== -1){
-                        addIcon.path = "M448,448V192l-32-32h-32V96h-64V64h-32V32c0-17.688-14.328-32-32-32s-32,14.313-32,32v32h-32v32h-64v64H96l-32,32v256c-35.344,0-64,28.625-64,64h512C512,476.625,483.344,448,448,448z M192,416h-64v-32h64V416z M192,352h-64v-32h64V352z M192,288h-64v-32h64V288z M192,224h-64v-32h64V224z M288,416h-64v-32h64V416z M288,352h-64v-32h64V352z M288,288h-64v-32h64V288z M288,224h-64v-32h64V224z M384,416h-64v-32h64V416z M384,352h-64v-32h64V352z M384,288h-64v-32h64V288z M384,224h-64v-32h64V224z";
-                        addIcon.fillColor = '#F05C2C';
-                        addIcon.scale = 0.08;
-                        addIcon.zIndex = 8;
+		        map.setView(new L.LatLng(val.lat, val.lng),9);
+	                map.addLayer(osm);
+			var layer = L.marker(L.latLng(val.lat, val.lng), {title: val.name, icon: redIcon}).addTo(map);
+	                layer.addTo(map);
+                    } else {
+                      var layer = L.marker(L.latLng(val.lat, val.lng), {title: val.name, icon: greenIcon}).addTo(map);
+	              layer.addTo(map);
                     }
-
-                    var marker = new google.maps.Marker({
-                        position: {lat: val.lat, lng: val.lng},
-                        map: map,
-                        name: val.name,
-                        icon: addIcon,
-                        zIndex: addIcon.zIndex
-                    });
-
-                /**
-                 * Set the map to current location
-                 */
-                if(val.now === true){
-                    setTimeout(function(){ // timeout for UX
-                        map.setCenter({lat: val.lat, lng: val.lng});
-                    }, 400)
-                }
-                
-                /**
-                 * Fade out
-                 */ 
-                setTimeout(function(){ // timeout for UX
-                  $("#overlay,#overlayTextBlock").fadeOut("fast");
-                }, 400);
-                
-                });
+		});
             });
-        }
+      }
+      
+      initmap();
 
-        /**
-         * Some window rendering
-         */
-        if(window.innerHeight > window.innerWidth){
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 9,
-                center: {lat: 52.3702, lng: 4.8952}
-            });
-        } else {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 7,
-                center: {lat: 52.3702, lng: 4.8952}
-            });
-        }
-
-        /**
-         * Load the maps from Foursquare
-         */
-        loadMaps();
-    }
-    </script>
-    <!-- include gmaps -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFQ7rozm97SCfqD_N9innaCHtu5-BT948&callback=initMap">
     </script>
   </body>
 </html>
