@@ -106,7 +106,7 @@
 			var layer = L.marker(L.latLng(val.lat, val.lng), {title: val.name, icon: greenIcon}).addTo(map);
 	                layer.addTo(map);
                     } else {
-                      var layer = L.marker(L.latLng(val.lat, val.lng), {title: val.name}).addTo(map);
+                      var layer = L.marker(L.latLng(val.lat, val.lng), {title: val.name, icon: orangeIcon}).addTo(map);
 	              layer.addTo(map);
                     }
 		});
