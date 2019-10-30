@@ -4,7 +4,7 @@
         "lng": 7.335888000000068,
         "lat": 47.750839,
         "type": "City",
-        "now": true
+        "now": false
     },
     {
         "name": "New York",
@@ -74,7 +74,7 @@
         "lng": 4.835658999999964,
         "lat": 45.764043,
         "type": "City",
-        "now": false
+        "now": true
     },
     {
         "name": "Strasbourg",
