@@ -74,7 +74,7 @@
         "lng": 4.835658999999964,
         "lat": 45.764043,
         "type": "City",
-        "now": true
+        "now": false
     },
     {
         "name": "Strasbourg",
@@ -207,7 +207,7 @@
         "lng": 13.404953999999975,
         "lat": 52.52000659999999,
         "type": "City",
-        "now": false
+        "now": true
     },
     {
         "name": "Paris",
