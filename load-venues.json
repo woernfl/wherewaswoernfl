@@ -4,7 +4,7 @@
         "lng": 7.335888000000068,
         "lat": 47.750839,
         "type": "City",
-        "now": false
+        "now": true
     },
     {
         "name": "New York",
@@ -207,7 +207,7 @@
         "lng": 13.404953999999975,
         "lat": 52.52000659999999,
         "type": "City",
-        "now": true
+        "now": false
     },
     {
         "name": "Paris",
