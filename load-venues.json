@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Amsterdam",
+        "lng": 4.8936041,
+        "lat": 52.3727598,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "New York",
         "lng": -74.0060152,
         "lat": 40.7127281,
