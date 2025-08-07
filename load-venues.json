@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Washington",
+        "lng": -77.0365427,
+        "lat": 38.8950368,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Funchal",
         "lng": -16.9,
         "lat": 32.63333,
