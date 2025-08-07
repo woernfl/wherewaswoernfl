@@ -7,6 +7,20 @@
         "now": true
     },
     {
+        "name": "Auxerre",
+        "lng": 3.570579,
+        "lat": 47.7961287,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Chartres",
+        "lng": 1.4881434,
+        "lat": 48.4438601,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Interlaken",
         "lng": 7.8585139,
         "lat": 46.6855231,
