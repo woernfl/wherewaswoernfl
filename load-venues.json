@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Gravelines",
+        "lng": 2.1273118,
+        "lat": 50.9870697,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Toulouse",
         "lng": 1.4442469,
         "lat": 43.6044622,
