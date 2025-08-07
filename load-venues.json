@@ -11,21 +11,21 @@
         "lng": 23.7348324,
         "lat": 37.9755648,
         "type": "City",
-        "now": true
+        "now": false
     },
     {
         "name": "Toronto",
         "lng": -79.3839347,
         "lat": 43.6534817,
         "type": "City",
-        "now": true
+        "now": false
     },
     {
         "name": "Salt Lake City",
         "lng": -111.886797,
         "lat": 40.7596198,
         "type": "City",
-        "now": true
+        "now": false
     },
     {
         "name": "Amsterdam",
