@@ -7,6 +7,55 @@
         "now": true
     },
     {
+        "name": "Nancy",
+        "lng": 6.1834097,
+        "lat": 48.6937223,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Versailles",
+        "lng": 2.1266886,
+        "lat": 48.8035403,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Orléans",
+        "lng": 1.9086066,
+        "lat": 47.9027336,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Le Havre",
+        "lng": 0.1079732,
+        "lat": 49.4938975,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Saint-Lô",
+        "lng": -1.0909278,
+        "lat": 49.115808,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Caen",
+        "lng": -0.3635615,
+        "lat": 49.1813403,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Cherbourg-en-Cotentin",
+        "lng": -1.6249565,
+        "lat": 49.6425343,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Gravelines",
         "lng": 2.1273118,
         "lat": 50.9870697,
