@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Leipzig",
+        "lng": 12.3747329,
+        "lat": 51.3406321,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Nantes",
         "lng": -1.5541362,
         "lat": 47.2186371,
