@@ -7,6 +7,20 @@
         "now": true
     },
     {
+        "name": "Guernesey",
+        "lng": -2.5812023,
+        "lat": 49.4622912,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Jersey",
+        "lng": -2.1358386,
+        "lat": 49.2214561,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Leipzig",
         "lng": 12.3747329,
         "lat": 51.3406321,
