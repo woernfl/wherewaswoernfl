@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Alpes d'Huez",
+        "lng": 0.9792226,
+        "lat": 49.4630381,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Minorque",
         "lng": 4.0499642,
         "lat": 39.9492572,
