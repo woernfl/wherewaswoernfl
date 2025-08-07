@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Interlaken",
+        "lng": 7.8585139,
+        "lat": 46.6855231,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Alpes d'Huez",
         "lng": 0.9792226,
         "lat": 49.4630381,
