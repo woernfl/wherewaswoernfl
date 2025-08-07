@@ -7,6 +7,27 @@
         "now": true
     },
     {
+        "name": "Athènes",
+        "lng": 23.7348324,
+        "lat": 37.9755648,
+        "type": "City",
+        "now": true
+    },
+    {
+        "name": "Toronto",
+        "lng": -79.3839347,
+        "lat": 43.6534817,
+        "type": "City",
+        "now": true
+    },
+    {
+        "name": "Salt Lake City",
+        "lng": -111.886797,
+        "lat": 40.7596198,
+        "type": "City",
+        "now": true
+    },
+    {
         "name": "Amsterdam",
         "lng": 4.8936041,
         "lat": 52.3727598,
@@ -17,13 +38,6 @@
         "name": "New York",
         "lng": -74.0060152,
         "lat": 40.7127281,
-        "type": "City",
-        "now": false
-    },
-    {
-        "name": "New York",
-        "lng": -77.0365529,
-        "lat": 38.8948932,
         "type": "City",
         "now": false
     },
