@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Nantes",
+        "lng": -1.5541362,
+        "lat": 47.2186371,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Lausanne",
         "lng": 6.6327025,
         "lat": 46.5218269,
