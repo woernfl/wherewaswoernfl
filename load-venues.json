@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Valence",
+        "lng": -0.3763353,
+        "lat": 39.4697065,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Athènes",
         "lng": 23.7348324,
         "lat": 37.9755648,
