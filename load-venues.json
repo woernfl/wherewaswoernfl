@@ -7,6 +7,20 @@
         "now": true
     },
     {
+        "name": "Funchal",
+        "lng": -16.9,
+        "lat": 32.63333,
+        "type": "City",
+        "now": false
+    },
+    {
+        "name": "Lisbonne",
+        "lng": -9.1365919,
+        "lat": 38.7077507,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Valence",
         "lng": -0.3763353,
         "lat": 39.4697065,
