@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Lausanne",
+        "lng": 6.6327025,
+        "lat": 46.5218269,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Nancy",
         "lng": 6.1834097,
         "lat": 48.6937223,
