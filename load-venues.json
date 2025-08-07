@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Minorque",
+        "lng": 4.0499642,
+        "lat": 39.9492572,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Guernesey",
         "lng": -2.5812023,
         "lat": 49.4622912,
