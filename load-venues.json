@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Toulouse",
+        "lng": 1.4442469,
+        "lat": 43.6044622,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Washington",
         "lng": -77.0365427,
         "lat": 38.8950368,
