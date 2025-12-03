@@ -7,6 +7,13 @@
         "now": true
     },
     {
+        "name": "Hyderabad",
+        "lng": 78.46004486083984,
+        "lat": 17.41339874267578,
+        "type": "City",
+        "now": false
+    },
+    {
         "name": "Auxerre",
         "lng": 3.570579,
         "lat": 47.7961287,
